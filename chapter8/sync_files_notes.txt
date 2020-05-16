@@ -1,0 +1,66 @@
+08:47
+
+Create test harness. 
+------
+1) Create two folders test1 test2 under home directory. 
+
+2) test1 has mantra1, mantra2, mantra3, mantra_test1, mantra_test2, mantra_test3
+
+3)test2 has mantra4, mantra5, mantra6, mantra_test4, mantra_test5, mantra_test6
+
+4) Common to both test1 and test2 
+6) 
+mantra_common_1 (newer one being in test1) see to it that file has some thing in
+it to say test2
+
+mantra_common_2 (newer one being in test2) see to it that file has some thing in
+it to say test1
+
+09:33 finshed setting up test harnesses. 
+----------------------------
+
+Made a backup of the files. 
+cp -rf test2 test2-backup
+cp -rf test1 test1-backup
+
+09:35
+
+Starting code. 
+Test harnesses 
+/sync_files.sh dir1 dir2 dir3
+Usage: ./sync_files.sh [dir1] [dir2]
+
+./sync_files.sh dir1 
+Usage: ./sync_files.sh [dir1] [dir2]
+
+Testing if  directories exist and are writable. 
+./sync_files.sh  /home/arvind/test2 /home/arvind/test1
+
+./sync_files.sh  /home/arvind/test2 /home/arvind/dir1
+Both /home/arvind/test2 and /home/arvind/dir1 should exist and be writable 
+                                
+./sync_files.sh  /home/arvind/dir1 /home/arvind/test2 
+Both /home/arvind/dir1 and /home/arvind/test2 should exist and be writable
+
+Two non existent directories. 
+./sync_files.sh  /home/arvind/dir1 /home/arvind/dir2
+Both /home/arvind/dir1 and /home/arvind/dir2 should exist and be writable 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

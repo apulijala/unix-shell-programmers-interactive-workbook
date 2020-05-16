@@ -51,26 +51,26 @@ if [ $# -eq 2 ]; then
             exit 0
     esac
     done
-elif [ $# -eq 1 ]; then
+fi    
+ [ $# -eq 1 ] && { 
     select op in "sin" "cos" "tan" "sqrt" "quit"
     do 
-    case $op in 
-    "sin") 
-            sin "$num1"
-        ;;
-    "cos") 
-            cos "$num1"
-        ;;
-    "tan") 
-            tan "$num1"
-        ;;
-    "sqrt") 
-            sqrt "$num1"
-        ;;
-    "quit")
-        exit 0
-    esac
+        case $op in 
+        "sin") 
+                sin "$num1"
+            ;;
+        "cos") 
+                cos "$num1"
+            ;;
+        "tan") 
+                tan "$num1"
+            ;;
+        "sqrt") 
+                sqrt "$num1"
+            ;;
+        "quit")
+            exit 0
+        esac
     done
-
-fi
+ }
 
