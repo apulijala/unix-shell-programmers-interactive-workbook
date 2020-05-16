@@ -24,8 +24,9 @@ sqrt() {
 
 }
 
-if [ $# -ne 1 -o $# -ne 2 ]; then
-    echo "Usage: $0 $num1 [$num2]"
+if [ $# -lt 1 -o   $# -gt 2 ]; then
+    echo "Usage: $0 num1 [num2]" 1>&2
+    exit 1
 fi
 
 
@@ -37,16 +38,16 @@ if [ $# -eq 2 ]; then
     "add") 
             echo $((num1 + num2))
         ;;
-        "subtract") 
+    "subtract") 
             echo $((num1 - num2))
         ;;
     "multiply") 
-            echo $((num1 "*" num2))
+            echo $((num1 * num2))
         ;;
-        "divide") 
+    "divide") 
             echo $((num1 / num2))
         ;;
-        "quit")
+    "quit")
             exit 0
     esac
     done
